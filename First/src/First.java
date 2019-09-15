@@ -4,15 +4,30 @@ public class First {
 
 	public static void main(String[] args) {
 		
-		Scanner input = new Scanner(system.in); 
+		Scanner input = new Scanner(System.in); 
+		
+		System.out.println("Vad heter du?");
+		String namn = input.nextLine();
+		
+		System.out.println("Hur gammal är du?");
+		String age = input.nextLine();
+		
+		System.out.println("Vad är din address?");
+		String address = input.nextLine();
 		
 		
-		string str = input.NextLine();
-		System.out.printin(vad heter du?);
+	    System.out.println("Vad är ditt postnummer?");
+		String postnr = input.nextLine();
 		
-		string str2 = input.NextLine();
-		System.out.println(hur gammal är du?);
+		System.out.println("Vilken stad bor du i?");
+		String stad = input.nextLine();
 		
+		
+		
+		
+		
+				
+			
 	
 		
 		
