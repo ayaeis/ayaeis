@@ -22,6 +22,11 @@ public class First {
 		System.out.println("Vilken stad bor du i?");
 		String stad = input.nextLine();
 		
+		System.out.println("Vad är ditt telefonnummer?");
+		String nr = input.nextLine();
+		
+		
+		
 		
 		
 		
