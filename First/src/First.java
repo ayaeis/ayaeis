@@ -15,7 +15,6 @@ public class First {
 		System.out.println("Vad är din address?");
 		String address = input.nextLine();
 		
-		
 	    System.out.println("Vad är ditt postnummer?");
 		String postnr = input.nextLine();
 		
@@ -25,8 +24,8 @@ public class First {
 		System.out.println("Vad är ditt telefonnummer?");
 		String nr = input.nextLine();
 		
-		
-		
+		System.out.println();
+	
 		
 		
 		
