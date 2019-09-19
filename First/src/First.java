@@ -18,14 +18,17 @@ public class First {
 	    System.out.println("Vad är ditt postnummer?");
 		String postnr = input.nextLine();
 		
-		System.out.println("Vilken stad bor du i?");
-		String stad = input.nextLine();
-		
+
 		System.out.println("Vad är ditt telefonnummer?");
 		String nr = input.nextLine();
 		
-		System.out.println();
-	
+		System.out.println("information");
+		System.out.println("Namn:" + namn );
+		System.out.println("Ålder:" + age);
+		System.out.println("Address:" + address); 
+		System.out.println("Postnummer:" + postnr);
+		System.out.println("Nummer:" + nr);
+		
 		
 		
 		
