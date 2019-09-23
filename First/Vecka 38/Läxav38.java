@@ -29,8 +29,11 @@ public class Läxav38 {
 		average = average + tempNumber;
 
 	}
+	average = average / 10.0;
 
-		   
+	System.out.println("Högst: " + highest);
+	System.out.println("Lägst: " + lowest);
+	System.out.println("Medelvärde: " + average);
 	
 	}
 
