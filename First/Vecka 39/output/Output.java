@@ -8,7 +8,6 @@ public class Output {
 		int x = input.nextInt();
 		for ( int index = 1 ; index <= x; index++ ) {
 			System.out.println(index + "Abradacabra");
-		}
 	}
-
+	}
 }
