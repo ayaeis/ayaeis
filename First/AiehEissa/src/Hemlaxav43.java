@@ -11,7 +11,6 @@ public class Hemlaxav43 {
 		double volume =  4/3 * radius * radius *radius * 3.14;
 		return volume;
 	}
-	
 	public static int count(String str, char c) {
 		int count = 0;
 		for (int i = 0; i < str.length(); i++) {
