@@ -135,6 +135,18 @@ public class Projekt {
 		gasMass = volume*gas.density;
 		return gasMass;	
 	}
+	/**
+	 * En metod som räknar ut vad ett solid ämne väger i massa.
+	 * 
+	 * @param solid Det solida ämnet.
+	 * @param volume Volymen på ämnet
+	 * @return
+	 */
+	public static double volumeToMass3(SolidTable solid, double volume) {
+		double solidMass = 0;
+		solidMass = volume*solid.density;
+		return solidMass;
+	}
 		
 	}
 	
