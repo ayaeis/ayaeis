@@ -17,8 +17,8 @@ public class Projekt {
 		System.out.println(potentialEnergy(2,5));
 		System.out.println(fallSpeed(2.5));
 		System.out.println(delta(1,10));
+		System.out.println(volumeToMass(FluidTable.WATER,1));
 		
-
 	}
 	public static double fahrenheitToCelsius(double fahrenheit) {
 		double celsius = (Farhenheit - 32)*5 / 9;
@@ -56,9 +56,13 @@ public class Projekt {
 	public static double delta(double first, double last) {
 		double delta = 0;
 		delta = last - first;
-		retrun delta;
+		return delta;
 	}
-	public static d
+	public static double volumeToMass(FluidTable fluid, double volume) {
+		double fluidMass = 0;
+		fluidMass = volume*fluid.density;
+		return fluidMass;
+	}
 		
 	}
 	
