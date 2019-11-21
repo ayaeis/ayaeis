@@ -1,5 +1,11 @@
 
 public class Projekt {
+		static double G = 9.82;
+		static double P_0 = 101.3E3;
+		static double R = 8.3145;
+		static double C = 2.99792458;
+		static double G_= 6.6726 * 1E-11;
+		static double LY = 9.46055 * 1E15;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -34,7 +40,7 @@ public class Projekt {
 		kineticEnergy = (mass*velocity*velocity)/ 2;
 		return kineticEnergy;
 	}
-	public static double potentialEnergy()
+	public static double potentialEnergy() {
 	
 	}
 	
