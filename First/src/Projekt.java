@@ -58,6 +58,7 @@ public class Projekt {
 		delta = last - first;
 		retrun delta;
 	}
+	public static d
 		
 	}
 	
