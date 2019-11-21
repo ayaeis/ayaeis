@@ -14,6 +14,8 @@ public class Projekt {
 		System.out.println(fluidPressure(FluidTable.WATER, 10));
 		System.out.println(pressureUnderWater(10));
 		System.out.println(kineticEnergy(2,2));
+		System.out.println(potentialEnergy(2,5));
+		System.out.println(fallSpeed(2.5));
 		
 
 	}
@@ -31,7 +33,7 @@ public class Projekt {
 		return thePressure;
 	}
 	public static double pressureUnderWater(double deep) {
-	    double underwaterPressure = 0;
+		double underwaterPressure = 0;
 	    underwaterPressure = H20.density*9.82*deep;
 	    return underwaterPressure;
 	}
@@ -40,8 +42,20 @@ public class Projekt {
 		kineticEnergy = (mass*velocity*velocity)/ 2;
 		return kineticEnergy;
 	}
-	public static double potentialEnergy() {
-	
+	public static double potentialEnergy(double mass, double height) {
+		double potentialEnergy = 0;
+		potentialEnergy = mass*G*height;
+		return potentialEnergy;
 	}
+	public static double fallSpeed(double height) {
+		double fallSpeed = 0;
+		fallSpeed = Math.sqrt(2*G*height);
+		return fallSpeed;
+	}
+		
+	}
+	
+	
+	
 	
 	
