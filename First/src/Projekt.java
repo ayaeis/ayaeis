@@ -16,6 +16,7 @@ public class Projekt {
 		System.out.println(kineticEnergy(2,2));
 		System.out.println(potentialEnergy(2,5));
 		System.out.println(fallSpeed(2.5));
+		System.out.println(delta(1,10));
 		
 
 	}
@@ -51,6 +52,11 @@ public class Projekt {
 		double fallSpeed = 0;
 		fallSpeed = Math.sqrt(2*G*height);
 		return fallSpeed;
+	}
+	public static double delta(double first, double last) {
+		double delta = 0;
+		delta = last - first;
+		retrun delta;
 	}
 		
 	}
