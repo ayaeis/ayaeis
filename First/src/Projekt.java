@@ -23,6 +23,7 @@ public class Projekt {
 		System.out.println(svtVelocity(10,5));
 		System.out.println(svtDistance(10,5));
 		System.out.println(svtTime(10,2));
+		System.out.println(work(50,10));
 		
 	}
 	/**
@@ -180,6 +181,16 @@ public class Projekt {
 	 */
 	public static double svtTime(double distance, double velocity) {
 		return (distance/velocity);
+	}
+	/**
+	 * En metod som räknar ut arbete med hjälp av fysikens formel för arbete.
+	 * 
+	 * @param force En variable på kraften.
+	 * @param distance En variable på sträckan.
+	 * @return returnerar arbete.
+	 */
+	public static double work(double force, double distance) {
+		return (force*distance);
 	}
 	
 		
