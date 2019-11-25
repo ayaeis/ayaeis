@@ -26,6 +26,7 @@ public class Projekt {
 		System.out.println(work(50,10));
 		System.out.println(power(1000,2));
 		System.out.println(heat(SolidTable.IRON,1,2));
+		System.out.println(heat2(FluidTable.WATER,1,10));
 		
 	}
 	/**
@@ -215,7 +216,17 @@ public class Projekt {
 	public static double heat(SolidTable solid, double mass, double deltaT) {
 		return(solid.heatCapacity*mass*deltaT);
 	}
-	
+	/**
+	 * En metod som räknar ut hur mycket energi det krävs för att värma upp en vätska till en viss temperatur.
+	 * 
+	 * @param fluid En variable för vätskan.
+	 * @param mass En variable för massan.
+	 * @param deltaT En variable för skillnaden i temperatur.
+	 * @return returnerar hur mycket energi som krävs.
+	 */
+	public static double heat2(FluidTable fluid, double mass, double deltaT) {
+		return(fluid.heatCapacity*mass*deltaT);
+	}
 		
 	}
 	
