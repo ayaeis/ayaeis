@@ -19,6 +19,8 @@ public class Projekt {
 		System.out.println(delta(1,10));
 		System.out.println(volumeToMass(FluidTable.WATER,1));
 		System.out.println(volumeToMass2(GasTable.AIR,1));
+		System.out.println(volumeToMass3(SolidTable.IRON,1));
+		System.out.println(svtVelocity(10,5));
 		
 	}
 	/**
@@ -136,16 +138,26 @@ public class Projekt {
 		return gasMass;	
 	}
 	/**
-	 * En metod som räknar ut vad ett solid ämne väger i massa.
+	 * En metod som räknar ut vad ett solid ämnes volym väger i  massa.
 	 * 
 	 * @param solid Det solida ämnet.
 	 * @param volume Volymen på ämnet
-	 * @return
+	 * @return returnerar massan.
 	 */
 	public static double volumeToMass3(SolidTable solid, double volume) {
 		double solidMass = 0;
 		solidMass = volume*solid.density;
 		return solidMass;
+	}
+	/**
+	 * En metod som räknar ut medelhastigheten med en formel på sträcka och tid.
+	 * 
+	 * @param distance En variable på sträckan.
+	 * @param time En variable på tiden. 
+	 * @return Returnerar medelhastigheten.
+	 */ 
+	public static double svtVelocity(double distance, double time) {
+		return (distance/time);
 	}
 		
 	}

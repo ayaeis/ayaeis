@@ -5,6 +5,7 @@ public enum FluidTable {
 	H20(0.998, 4.19, 0, 100, 2260), 
 	WATER(0.998, 4.19, 0, 100, 2260),
 	H2SO4(1.84, 1.38, 10, 336, 511)
+	
 	;
 
 	double density;
