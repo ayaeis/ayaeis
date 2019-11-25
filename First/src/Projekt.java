@@ -28,6 +28,7 @@ public class Projekt {
 		System.out.println(heat(SolidTable.IRON,1,2));
 		System.out.println(heat2(FluidTable.WATER,1,10));
 		System.out.println(heat3(GasTable.AIR,1,1));
+		System.out.println(velocityToHeight(9.82));
 		
 	}
 	/**
@@ -238,6 +239,15 @@ public class Projekt {
 	 */
 	public static double heat3(GasTable gas, double mass, double deltaT) {
 		return (gas.heatCapacity*mass*deltaT);
+	}
+	/**
+	 * En metod som räknar ut hur högt ett objekt kommer om man vet hastigjeten. 
+	 * 
+	 * @param velocity En variable för hastigheten.
+	 * @return returnerar höjden.
+	 */
+	public static double velocityToHeight(double velocity) {
+		return (Math.pow(velocity, 2)/(2*G));
 	}
 		
 	}
