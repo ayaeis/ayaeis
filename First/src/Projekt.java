@@ -24,6 +24,8 @@ public class Projekt {
 		System.out.println(svtDistance(10,5));
 		System.out.println(svtTime(10,2));
 		System.out.println(work(50,10));
+		System.out.println(power(1000,2));
+		System.out.println(heat(SolidTable.IRON,1,2));
 		
 	}
 	/**
@@ -191,6 +193,27 @@ public class Projekt {
 	 */
 	public static double work(double force, double distance) {
 		return (force*distance);
+	}
+	/**
+	 * En metod som räknar ut effekt med hjälp av arbete och tid
+	 * .
+	 * @param work En variable på arbete.
+	 * @param time En variable på tid.
+	 * @return returnerar effeket.
+	 */
+	public static double power(double work, double time) {
+		return(work/time);
+	}
+	/**
+	 * En metod som räknar ut hur mycket energi som krävs för att värma ett visst material ett angivet antal grader.
+	 * 
+	 * @param solid En variable på materialet.
+	 * @param mass En variable på massan.
+	 * @param deltaT En variable för skillnaden i temperatur. 
+	 * @return returnerar hur mycket energi som krävs. 
+	 */
+	public static double heat(SolidTable solid, double mass, double deltaT) {
+		return(solid.heatCapacity*mass*deltaT);
 	}
 	
 		
