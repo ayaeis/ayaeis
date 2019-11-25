@@ -21,6 +21,7 @@ public class Projekt {
 		System.out.println(volumeToMass2(GasTable.AIR,1));
 		System.out.println(volumeToMass3(SolidTable.IRON,1));
 		System.out.println(svtVelocity(10,5));
+		System.out.println(svtDistance(10,5));
 		
 	}
 	/**
@@ -159,6 +160,17 @@ public class Projekt {
 	public static double svtVelocity(double distance, double time) {
 		return (distance/time);
 	}
+	/**
+	 * En metod som räknar ut sträckan med hjälp av hastighet-sträcka-tid formel.
+	 *
+	 * @param velocity En variable för hastigheten.
+	 * @param time En variable för tiden.
+	 * @return returnerar sträckan.
+	 */
+	public static double svtDistance(double velocity, double time) {
+		return (velocity*time);
+	}
+	
 		
 	}
 	
