@@ -66,7 +66,7 @@ public class Projekt {
 	 */
 	public static double pressureUnderWater(double deep) {
 		double underwaterPressure = 0;
-	    underwaterPressure = H20.density*9.82*deep;
+	    underwaterPressure = FluidTable.H20.density*9.82*deep;
 	    return underwaterPressure;
 	}
 	/**
