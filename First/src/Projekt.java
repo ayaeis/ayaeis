@@ -22,6 +22,7 @@ public class Projekt {
 		System.out.println(volumeToMass3(SolidTable.IRON,1));
 		System.out.println(svtVelocity(10,5));
 		System.out.println(svtDistance(10,5));
+		System.out.println(svtTime(10,2));
 		
 	}
 	/**
@@ -169,6 +170,16 @@ public class Projekt {
 	 */
 	public static double svtDistance(double velocity, double time) {
 		return (velocity*time);
+	}
+	/**
+	 * En metod som räknar ut tiden med en hjälp av en formel.
+	 * 
+	 * @param distance En variable för sträckan.
+	 * @param velocity En variable för hastigheten.
+	 * @return returnerar tiden.
+	 */
+	public static double svtTime(double distance, double velocity) {
+		return (distance/velocity);
 	}
 	
 		
