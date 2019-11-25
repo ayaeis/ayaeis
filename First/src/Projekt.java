@@ -27,6 +27,7 @@ public class Projekt {
 		System.out.println(power(1000,2));
 		System.out.println(heat(SolidTable.IRON,1,2));
 		System.out.println(heat2(FluidTable.WATER,1,10));
+		System.out.println(heat3(GasTable.AIR,1,1));
 		
 	}
 	/**
@@ -226,6 +227,17 @@ public class Projekt {
 	 */
 	public static double heat2(FluidTable fluid, double mass, double deltaT) {
 		return(fluid.heatCapacity*mass*deltaT);
+	}
+	/**
+	 * En metod som räknar ut hur mycket energi det krävs för att värma upp en gas till en viss temperatur.
+	 * 
+	 * @param gas En variable för gas.
+	 * @param mass En variable för massan.
+	 * @param deltaT En variable för skillnaden i temperatur.
+	 * @return returnerar hur mycket energi som krävs.
+	 */
+	public static double heat3(GasTable gas, double mass, double deltaT) {
+		return (gas.heatCapacity*mass*deltaT);
 	}
 		
 	}
