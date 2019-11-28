@@ -21,6 +21,19 @@ public class Projekt {
 		System.out.println(heat2(FluidTable.WATER, 4, 78)+"joule");
 		System.out.println("Hur stort är det totala trycket 75 meter under havsytan?");
 		System.out.println(fluidPressure(FluidTable.WATER,75));
+		System.out.println("Tomas som är 180cm lång kastar upp en boll med massan 250 gram i luften så den får starthastigheten 60 km/h. Hur högt kommer bollen?");
+		// 60 km/h = 16.67 m/s  och 180 cm = 1.8 m
+		
+		System.out.println(velocityToHeight(16.67) + 1.8 + "meter");
+		System.out.println("En bil med massan 735kg accelererar med konstant acceleration från 0-100 på 4.8 sekunder. Hur stor effekt har bilens motor uppnått?");
+		// 100 km/h  / 3.6 = 27.78 m/s
+		// accelerationen = 27.78 / 4.8 = 5.79 m^2
+		// Kraft = m*a = 735 * 5.79 = 4 353,4 newton
+		// sträckan = 27.78 * 4.8 = 133,3 meter
+		// Arbete = kraft * sträcka = 580500 newtonmeter
+		System.out.println(power(580500, 4.8)+"w");
+		
+		
 
 		
 		
