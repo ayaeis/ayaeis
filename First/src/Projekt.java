@@ -16,6 +16,12 @@ public class Projekt {
 		System.out.println("ur långt hinner Tomas om han löper med medelhastigheten 2.7 m/s i 50 minuter?");
 		// 50 minuter är 3000 sekunder
 		System.out.println(svtDistance(2.7,3000)+"meter");
+		System.out.println("Hur mycket energi krävs för att värma upp 4 liter vatten från rumstemperatur (22 grader) till kokpunkten?");
+		// 4 liter vatten är 4 kg, skillnaden i temperaturen är 100-22=78 grader.
+		System.out.println(heat2(FluidTable.WATER, 4, 78)+"joule");
+		System.out.println("Hur stort är det totala trycket 75 meter under havsytan?");
+		System.out.println(fluidPressure(FluidTable.WATER,75));
+
 		
 		
 		
@@ -44,7 +50,7 @@ public class Projekt {
 	 * En metod som räknar ut vätsketrycket i en viss vätska under ett visst djup med en formel.
 	 * 
 	 * @param fluid Värdet för densiteten av en vätska  
-	 * @param deep värdet för djupet. Just nu är det 10 meter under vattnet.
+	 * @param deep värdet för djupet.
 	 * @return retunerar vätsketrycket
 	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
