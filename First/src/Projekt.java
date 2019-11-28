@@ -9,26 +9,15 @@ public class Projekt {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(fahrenheitToCelsius(50));
-		System.out.println(kelvinToCelsius(0));
-		System.out.println(fluidPressure(FluidTable.WATER, 10));
-		System.out.println(pressureUnderWater(10));
-		System.out.println(kineticEnergy(2,2));
-		System.out.println(potentialEnergy(2,5));
-		System.out.println(fallSpeed(2.5));
-		System.out.println(delta(1,10));
-		System.out.println(volumeToMass(FluidTable.WATER,1));
-		System.out.println(volumeToMass2(GasTable.AIR,1));
-		System.out.println(volumeToMass3(SolidTable.IRON,1));
-		System.out.println(svtVelocity(10,5));
-		System.out.println(svtDistance(10,5));
-		System.out.println(svtTime(10,2));
-		System.out.println(work(50,10));
-		System.out.println(power(1000,2));
-		System.out.println(heat(SolidTable.IRON,1,2));
-		System.out.println(heat2(FluidTable.WATER,1,10));
-		System.out.println(heat3(GasTable.AIR,1,1));
-		System.out.println(velocityToHeight(9.82));
+		
+		System.out.println("Hur mycket väger 60 dm^3 järn?"); 
+		// 60 dm^3 är 0,06 m^3
+		System.out.println(volumeToMass3(SolidTable.IRON,0.06)+"kg");
+		System.out.println("ur långt hinner Tomas om han löper med medelhastigheten 2.7 m/s i 50 minuter?");
+		// 50 minuter är 3000 sekunder
+		System.out.println(svtDistance(2.7,3000)+"meter");
+		
+		
 		
 	}
 	/**
@@ -54,9 +43,9 @@ public class Projekt {
 	/**
 	 * En metod som räknar ut vätsketrycket i en viss vätska under ett visst djup med en formel.
 	 * 
-	 * @param fluid Värdet för densiteten av en vätska 
+	 * @param fluid Värdet för densiteten av en vätska  
 	 * @param deep värdet för djupet. Just nu är det 10 meter under vattnet.
-	 * @return
+	 * @return retunerar vätsketrycket
 	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		double thePressure = 0;
@@ -77,9 +66,9 @@ public class Projekt {
 	/**
 	 * Denna metod räknar ut kinetiska energin med hjälp av en formel.
 	 * 
-	 * @param mass Massan på ett objekt.
-	 * @param velocity Hastigheten på ett objekt.
-	 * @return Returnerar den kinetiska energin. 
+	 * @param mass Massan på ett objekt i kg.
+	 * @param velocity Hastigheten på ett objekt i m/s.
+	 * @return Returnerar den kinetiska energin kgm/s. 
 	 */
 	public static double kineticEnergy(double mass, double velocity) {
 		double kineticEnergy = 0;
@@ -89,8 +78,8 @@ public class Projekt {
 	/**
 	 * Denna metod räknar ut den potentiella energin på ett objekt. 
 	 * 
-	 * @param mass Massan på objektet.
-	 * @param height Höjden som objektet befinner sig på i förhållande till nollpunkten.
+	 * @param mass Massan på objektet i kg.
+	 * @param height Höjden som objektet befinner sig på i förhållande till nollpunkteni meter.
 	 * @return Returnerar den potentionella energin objektet har. 
 	 */
 	public static double potentialEnergy(double mass, double height) {
@@ -101,8 +90,8 @@ public class Projekt {
 	/**
 	 * Metoden räknar ut den maximala hastigheten som ett objekt kommer att ha när den släpps från en viss höjd.
 	 * 
-	 * @param height Höjden objektet släpps ifrån.
-	 * @return Returnerar hastigheten.
+	 * @param height Höjden objektet släpps ifrån i meter.
+	 * @return Returnerar hastigheten i m/s.
 	 */
 	public static double fallSpeed(double height) {
 		double fallSpeed = 0;
@@ -125,8 +114,8 @@ public class Projekt {
 	 * En metod som omvandlar en vätskas volym till vad dens massa.
 	 * 
 	 * @param fluid Vätskan.
-	 * @param volume Volymen.
-	 * @return Retunerar västkans massa.
+	 * @param volume Volymen i m^3 .
+	 * @return Retunerar västkans massa i kg.
 	 */
 	public static double volumeToMass(FluidTable fluid, double volume) {
 		double fluidMass = 0;
@@ -137,8 +126,8 @@ public class Projekt {
 	 * En metod som räknar ut vad en gas volym väger i massa. 
 	 * 
 	 * @param gas Gasen.
-	 * @param volume Gasens volym.
-	 * @return Returnerar gasens massa. 
+	 * @param volume Gasens volym i m^3.
+	 * @return Returnerar gasens massa i kg. 
 	 */
 	public static double volumeToMass2(GasTable gas, double volume) {
 		double gasMass = 0;
@@ -149,8 +138,8 @@ public class Projekt {
 	 * En metod som räknar ut vad ett solid ämnes volym väger i  massa.
 	 * 
 	 * @param solid Det solida ämnet.
-	 * @param volume Volymen på ämnet
-	 * @return returnerar massan.
+	 * @param volume Volymen på ämneti m^3
+	 * @return returnerar massan i kg.
 	 */
 	public static double volumeToMass3(SolidTable solid, double volume) {
 		double solidMass = 0;
@@ -160,9 +149,9 @@ public class Projekt {
 	/**
 	 * En metod som räknar ut medelhastigheten med en formel på sträcka och tid.
 	 * 
-	 * @param distance En variable på sträckan.
-	 * @param time En variable på tiden. 
-	 * @return Returnerar medelhastigheten.
+	 * @param distance En variable på sträckan i meter.
+	 * @param time En variable på tiden i sekunder. 
+	 * @return Returnerar medelhastigheten i m/s.
 	 */ 
 	public static double svtVelocity(double distance, double time) {
 		return (distance/time);
@@ -170,9 +159,9 @@ public class Projekt {
 	/**
 	 * En metod som räknar ut sträckan med hjälp av hastighet-sträcka-tid formel.
 	 *
-	 * @param velocity En variable för hastigheten.
-	 * @param time En variable för tiden.
-	 * @return returnerar sträckan.
+	 * @param velocity En variable för hastigheten m/s.
+	 * @param time En variable för tiden i sekunder.
+	 * @return returnerar sträckan i meter.
 	 */
 	public static double svtDistance(double velocity, double time) {
 		return (velocity*time);
@@ -180,9 +169,9 @@ public class Projekt {
 	/**
 	 * En metod som räknar ut tiden med en hjälp av en formel.
 	 * 
-	 * @param distance En variable för sträckan.
-	 * @param velocity En variable för hastigheten.
-	 * @return returnerar tiden.
+	 * @param distance En variable för sträckan i meter.
+	 * @param velocity En variable för hastigheten i m/s.
+	 * @return returnerar tiden i sekunder.
 	 */
 	public static double svtTime(double distance, double velocity) {
 		return (distance/velocity);
@@ -190,9 +179,9 @@ public class Projekt {
 	/**
 	 * En metod som räknar ut arbete med hjälp av fysikens formel för arbete.
 	 * 
-	 * @param force En variable på kraften.
-	 * @param distance En variable på sträckan.
-	 * @return returnerar arbete.
+	 * @param force En variable på kraften i Newton.
+	 * @param distance En variable på sträckan i meter.
+	 * @return returnerar arbete i Newtonmeter.
 	 */
 	public static double work(double force, double distance) {
 		return (force*distance);
@@ -200,9 +189,9 @@ public class Projekt {
 	/**
 	 * En metod som räknar ut effekt med hjälp av arbete och tid
 	 * .
-	 * @param work En variable på arbete.
-	 * @param time En variable på tid.
-	 * @return returnerar effeket.
+	 * @param work En variable på arbete i newtonmeter.
+	 * @param time En variable på tid i sekunder.
+	 * @return returnerar effeket i watt.
 	 */
 	public static double power(double work, double time) {
 		return(work/time);
@@ -211,9 +200,9 @@ public class Projekt {
 	 * En metod som räknar ut hur mycket energi som krävs för att värma ett visst material ett angivet antal grader.
 	 * 
 	 * @param solid En variable på materialet.
-	 * @param mass En variable på massan.
+	 * @param mass En variable på massan i kg.
 	 * @param deltaT En variable för skillnaden i temperatur. 
-	 * @return returnerar hur mycket energi som krävs. 
+	 * @return returnerar hur mycket energi som krävs i joule. 
 	 */
 	public static double heat(SolidTable solid, double mass, double deltaT) {
 		return(solid.heatCapacity*mass*deltaT);
@@ -222,9 +211,9 @@ public class Projekt {
 	 * En metod som räknar ut hur mycket energi det krävs för att värma upp en vätska till en viss temperatur.
 	 * 
 	 * @param fluid En variable för vätskan.
-	 * @param mass En variable för massan.
+	 * @param mass En variable för massan i kg.
 	 * @param deltaT En variable för skillnaden i temperatur.
-	 * @return returnerar hur mycket energi som krävs.
+	 * @return returnerar hur mycket energi som krävs i joule.
 	 */
 	public static double heat2(FluidTable fluid, double mass, double deltaT) {
 		return(fluid.heatCapacity*mass*deltaT);
@@ -233,9 +222,9 @@ public class Projekt {
 	 * En metod som räknar ut hur mycket energi det krävs för att värma upp en gas till en viss temperatur.
 	 * 
 	 * @param gas En variable för gas.
-	 * @param mass En variable för massan.
+	 * @param mass En variable för massan i kg.
 	 * @param deltaT En variable för skillnaden i temperatur.
-	 * @return returnerar hur mycket energi som krävs.
+	 * @return returnerar hur mycket energi som krävs i joule.
 	 */
 	public static double heat3(GasTable gas, double mass, double deltaT) {
 		return (gas.heatCapacity*mass*deltaT);
@@ -243,8 +232,8 @@ public class Projekt {
 	/**
 	 * En metod som räknar ut hur högt ett objekt kommer om man vet hastigjeten. 
 	 * 
-	 * @param velocity En variable för hastigheten.
-	 * @return returnerar höjden.
+	 * @param velocity En variable för hastigheten i m/s.
+	 * @return returnerar höjden i meter.
 	 */
 	public static double velocityToHeight(double velocity) {
 		return (Math.pow(velocity, 2)/(2*G));
