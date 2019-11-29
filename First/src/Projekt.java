@@ -32,7 +32,8 @@ public class Projekt {
 		// sträckan = 27.78 * 4.8 = 133,3 meter
 		// Arbete = kraft * sträcka = 580500 newtonmeter
 		System.out.println(power(580500, 4.8)+"w");
-		
+		System.out.println("En studsboll som väger 1kg släpps från 12 meters höjd och varje gång den nuddar marken tappar den 1% av sin energi. Hur många gånger kommer bollen studsa i marken innan den inte studsar hörge än 0.5 meter?\r\n");
+		System.out.println(numberOfBounces(12));
 		
 
 		
@@ -256,6 +257,17 @@ public class Projekt {
 	 */
 	public static double velocityToHeight(double velocity) {
 		return (Math.pow(velocity, 2)/(2*G));
+	}
+	public static double numberOfBounces(double height) {
+		double finalEnergy = height*G;
+		int counterBounces = 0;
+		double i = 12;
+		while (i >=0.5) {
+			finalEnergy *=0.99;
+			i = finalEnergy / 9.82;
+			counterBounces++;
+		}
+		return counterBounces;
 	}
 		
 	}
