@@ -41,7 +41,7 @@ public class Projekt {
 		// Skillnaden i tiden 4 - 0 = 4
 		System.out.println(acceleration(10, 4) + "m/s^2");
 		System.out.println("Kraften 450N verkar på en boll under tiden 5 sekunder, hur stor blir impulsen? ");
-		System.out.println(impulse(450,5));
+		System.out.println(impulse(450,5) + "J");
 		
 		
 
@@ -311,6 +311,25 @@ public class Projekt {
 	public static double impulse(double force, double deltaT) {
 		return (force*deltaT);
 	}
+	/**
+	 * En metod som räknar ut densitetet på ett föremål densitetsformeln.
+	 * @param mass massan på föremålet i kg
+	 * @param volume föremålets volym i m^3
+	 * @return denistetet
+	 */
+	public static double density(double mass, double volume) {
+		return (mass/volume);
+	}
+	/**
+	 * En metod som räknar ut vad kraftresultanten blir om man vet vad accelerationen och massan är.
+	 * @param acceleration indata för accelerationen i m/s^2
+	 * @param mass indata för massan i kg
+	 * @return kraften i newton
+	 */
+	public static double force(double acceleration, double mass) {
+		return (mass*acceleration);
+	}
+	
 	
 	
 		
