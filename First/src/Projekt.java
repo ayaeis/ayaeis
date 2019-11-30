@@ -329,7 +329,33 @@ public class Projekt {
 	public static double force(double acceleration, double mass) {
 		return (mass*acceleration);
 	}
-	
+	/**
+	 * En metod som räknar ut kraften som verkar på en fjäder, om man vet fjäderkonstanten och längförändringen.
+	 * @param springConstant indata för fjäderkonstanten 
+	 * @param extension indata för längdförändringen 
+	 * @return returnerar kraften i newton
+	 */
+	public static double hookesForce(double springConstant, double extension) {
+		return (springConstant*extension);
+	}
+	/**
+	 * En metod som räknar ut vad längdförändringen i en fjäder blir om man vet vad kraften och fjäderkonstanten är.
+	 * @param force Kraften som verkar på fjärden
+	 * @param springConstant fjäderkonstanten
+	 * @return retunerar längdförändringen.
+	 */
+	public static double hookesExtension(double force, double springConstant) {
+		return(force/springConstant);
+	}
+	/**
+	 * En metod som räknar ut vad fjäderkonstanten blir, om man vet vad kraften och längförändringen är.
+	 * @param force kraften som verkar på fjärden
+	 * @param extension längförändringen
+	 * @return retunerar fjäderkonstanten
+	 */
+	public static double springConstant(double force, double extension) {
+		return(force/extension);
+	}
 	
 	
 		
