@@ -34,6 +34,12 @@ public class Projekt {
 		System.out.println(power(580500, 4.8)+"w");
 		System.out.println("En studsboll som väger 1kg släpps från 12 meters höjd och varje gång den nuddar marken tappar den 1% av sin energi. Hur många gånger kommer bollen studsa i marken innan den inte studsar hörge än 0.5 meter?\r\n");
 		System.out.println(numberOfBounces(12));
+		System.out.println("Hur mycket väger Sara, som har massan 55 kg, på jorden?");
+		System.out.println(newtonEarthWeight(55));
+		System.out.println("En bils hastighet ändras från 50 m/s till 60m/s på 4 sekunder, hur stor var accelerationen?");
+		// Skillnaden i hastigheten 60 - 50 = 10
+		// Skillnaden i tiden 4 - 0 = 4
+		System.out.println(acceleration(10, 4));
 		
 
 		
@@ -258,8 +264,14 @@ public class Projekt {
 	public static double velocityToHeight(double velocity) {
 		return (Math.pow(velocity, 2)/(2*G));
 	}
+	/**
+	 * En metod som räknar ut hur många gånger en studsboll som väger 1kg studsar i marken innan den inte studsar hörge än 0.5 meter, ifall den 1kg studsar  ifall den  släpps från 12 meters höjd och varje gång den nuddar marken tappar den 1% av sin energi.
+
+	 * @param height 12 meter höjden i meter.
+	 * @return hur många gånger den studsar
+	 */
 	public static double numberOfBounces(double height) {
-		double finalEnergy = height*G;
+		double finalEnergy = height*9.82;
 		int counterBounces = 0;
 		double i = 12;
 		while (i >=0.5) {
@@ -269,6 +281,26 @@ public class Projekt {
 		}
 		return counterBounces;
 	}
+	/**
+	 * En metod som räknar ut hur mycket ett föremål väger i Newton på jorden med hjälp av massan.
+	 * @param mass Föremålets massa i kg
+	 * @return föremålets vikt i newton
+	 */
+	
+	public static double newtonEarthWeight(double mass) {
+		return (mass*G);
+	}
+	/** 
+	 * En metod som räknar ut accelerationen med accelerationens formell.
+	 * @param deltaV skillnaden i hastigheten
+	 * @param deltaT skillnaden i tiden
+	 * @return accelerationen
+	 */
+	public static double acceleration(double deltaV, double deltaT) {
+		return (deltaV/deltaT);
+	}
+	
+	
 		
 	}
 	
