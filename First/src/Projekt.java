@@ -355,8 +355,17 @@ public class Projekt {
 	 */
 	public static double springConstant(double force, double extension) {
 		return(force/extension);
+
 	}
-	
+	/**
+	 * En metod som räknar ut vad spänningen blir 
+	 * @param resistance resistancen i Ohm
+	 * @param current strömmen i Ampere
+	 * @return returnerar spänningen i volt
+	 */
+	public static double voltage(double resistance, double current) {
+		return(resistance*current);
+	}
 	
 		
 	}
