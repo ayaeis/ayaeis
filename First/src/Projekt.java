@@ -33,13 +33,16 @@ public class Projekt {
 		// Arbete = kraft * sträcka = 580500 newtonmeter
 		System.out.println(power(580500, 4.8)+"w");
 		System.out.println("En studsboll som väger 1kg släpps från 12 meters höjd och varje gång den nuddar marken tappar den 1% av sin energi. Hur många gånger kommer bollen studsa i marken innan den inte studsar hörge än 0.5 meter?\r\n");
-		System.out.println(numberOfBounces(12));
+		System.out.println(numberOfBounces(12) + "gånger");
 		System.out.println("Hur mycket väger Sara, som har massan 55 kg, på jorden?");
-		System.out.println(newtonEarthWeight(55));
+		System.out.println(newtonEarthWeight(55)+ "Newton");
 		System.out.println("En bils hastighet ändras från 50 m/s till 60m/s på 4 sekunder, hur stor var accelerationen?");
 		// Skillnaden i hastigheten 60 - 50 = 10
 		// Skillnaden i tiden 4 - 0 = 4
-		System.out.println(acceleration(10, 4));
+		System.out.println(acceleration(10, 4) + "m/s^2");
+		System.out.println("Kraften 450N verkar på en boll under tiden 5 sekunder, hur stor blir impulsen? ");
+		System.out.println(impulse(450,5));
+		
 		
 
 		
@@ -298,6 +301,15 @@ public class Projekt {
 	 */
 	public static double acceleration(double deltaV, double deltaT) {
 		return (deltaV/deltaT);
+	}
+	/**
+	 * En metod som räknar ut impulsen som verkar på ett föremål med impulsformeln.
+	 * @param force kraften som verkar på föremålet.. i newton
+	 * @param deltaT ..under tiden (deltaT) i sekunder
+	 * @return impulsen i J
+	 */
+	public static double impulse(double force, double deltaT) {
+		return (force*deltaT);
 	}
 	
 	
