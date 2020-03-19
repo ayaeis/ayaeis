@@ -11,7 +11,7 @@ public class gissaTalet {
 	public static Int howManyGuesses; // antalet gissningar spelaren vill ha.
 	public static Int theAnswer; // talet som slumpas fram och är det rätta svaret.
 	public static Int theGuessedNumber; // spelarens gissning.
-	public static Int guessesLeft; // hur många gissningar är kvar.
+
 
 
 	
@@ -73,8 +73,8 @@ public class gissaTalet {
 		System.out.println("Write the minimum number of the interval");
 		int minimumNumber = input.nextInt();
 		System.out.println("Choose the maximum number of the interval");
-		int maximumNumer = input.nextInt();
-		System.out.println("You choose an interval between" + minimumNumber + "-" maximumNumber + "and you have 1000 guesses!");
+		int maximumNumber = input.nextInt();
+		System.out.println("You choose an interval between" + minimumNumber + "-" + maximumNumber + "and you have 1000 guesses!");
 		System.out.println("Goodluck!");
 		int howManyGuesses = 1000;
 		theWayTheGameWorks();
