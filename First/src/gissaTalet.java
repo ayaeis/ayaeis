@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 public class gissaTalet {
 
-	private static Scanner input;
+
+	static Scanner input = new Scanner(System.in);
 	public static Int answer1; // för att se till om man vill fortsätta med spelet.
 	public static Int theLevel; // väljer nivån man vill ha.
 	public static Int minimumNumber; // minsta talet inom intervallet.
@@ -12,9 +13,6 @@ public class gissaTalet {
 	public static Int theAnswer; // talet som slumpas fram och är det rätta svaret.
 	public static Int theGuessedNumber; // spelarens gissning.
 
-
-
-	
 	public static void main(String[] args) {
 		guessGame();
 	}
@@ -26,15 +24,14 @@ public class gissaTalet {
 	 */
 	public static int theRightAnswer(int maximumNumber,int minimumNumber) {
 		Random theAnswer = new Random();
-		return theAnswer.nextInt(maximumNumber - minimumNumber + 1) + minmumNumber; 
-		// (max - min + 1) + min för att vi skall kunna få 
+		return theAnswer.nextInt(maximumNumber - minimumNumber + 1) + minimumNumber;  
 	}
 	/**
 	 * This method contains the coding needed to launch the game
 	 */
 	public static void guessGame() {
 		do {
-			while(run){
+			while (run){
 				System.out.println("Welcome to guess the number!");
 				System.out.println("Do you want to guess the numer? Please answer with 1 for yes or 2 for no");
 				int answer1 = input.nextInt();
@@ -57,9 +54,9 @@ public class gissaTalet {
 						
 					case 3:
 						hardMode();
-						break;
-						
-					}		
+						break;	
+					}	
+				 
 				}
 			}
 		}
@@ -106,6 +103,9 @@ public class gissaTalet {
 		System.out.println("Choose a number larger than" + maximumNumber + "and you have" + howManyGuesses + "guesses");
 		theWayTheGameWorks();
 	}
+	/**
+	 * This method contains the code needed to run the different levels
+	 */
 	public static void theWayTheGameWorks() {
 		System.out.println("Write your first guess!");
 		theAnswer = theRightAnswer(maximumNumber, minimumNumber);
