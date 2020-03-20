@@ -2,6 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class guessTheNumber {
+	
 	static Scanner input = new Scanner(System.in);
 	
 	public static int answer1; //The answer to the question asking the player if they want to play or not
@@ -16,7 +17,7 @@ public class guessTheNumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		easyMode();
+		hardMode();
 
 	}
 	/**
@@ -32,7 +33,7 @@ public class guessTheNumber {
 		// (max - min + 1) + min so that the generated answer would be >=maximumNumber
 	}
 	public static void beginGuessGame() {
-		
+	
 	}
 	/**
 	 * This method contains the code for the easy level of this game.
@@ -45,7 +46,7 @@ public class guessTheNumber {
 		minimumNumber = input.nextInt();
 		System.out.println("Now please write the maximum number of your desired interval");
 		maximumNumber = input.nextInt();
-		System.out.println("Your interval is between" + minimumNumber + "and" + maximumNumber +"and you have 1000 guesses!" );
+		System.out.println("Your interval is between " + minimumNumber + " and" + maximumNumber +" and you have 1000 guesses!" );
 		howManyGuesses = 1000;
 		
 		allModes();
@@ -54,7 +55,7 @@ public class guessTheNumber {
 	/**
 	 * This method contains the code for the easy level of this game.
 	 */
-	public static void MediumMode() {
+	public static void mediumMode() {
 		System.out.flush();
 		System.out.println("You have chosen the medium level of the game!");
 		System.out.println("You get to choose the interval of the number and how many guesses you want!");
@@ -65,12 +66,24 @@ public class guessTheNumber {
 		maximumNumber = input.nextInt();
 		System.out.println("Now choose how many guesses you would like to have!");
 		howManyGuesses = input.nextInt();
-		System.out.println("Your interval is between" + minimumNumber + "and" + maximumNumber + "and you have" + howManyGuesses + "guesses!");
+		System.out.println("Your interval is between " + minimumNumber + " and " + maximumNumber + " and you have " + howManyGuesses + " guesses!");
 		
 		allModes();
 		
 	}
+	/**
+	 * This method contains the code for the easy level of this game.
+	 */
 	public static void hardMode() {
+		System.out.flush();
+		System.out.println("You have chosen the hard level of the game!");
+		minimumNumber = 50;
+		maximumNumber = 1000;
+		howManyGuesses = 5;
+		System.out.println();
+		System.out.println("The number is above " + minimumNumber + " and you have " + howManyGuesses + " guesses!");
+		
+		allModes();
 		
 	}
 	/**
