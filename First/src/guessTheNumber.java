@@ -2,7 +2,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class guessTheNumber {
-	
+	private static final boolean run = false;
+
 	static Scanner input = new Scanner(System.in);
 	
 	public static int answer1; //The answer to the question asking the player if they want to play or not
@@ -17,7 +18,7 @@ public class guessTheNumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		hardMode();
+		beginGuessGame();
 
 	}
 	/**
@@ -33,6 +34,35 @@ public class guessTheNumber {
 		// (max - min + 1) + min so that the generated answer would be >=maximumNumber
 	}
 	public static void beginGuessGame() {
+		System.out.flush();
+		System.out.println("Welcome to Guess the number!");
+		System.out.println("You get to guess the number while you have a limited amount of guesses!");
+		System.out.println("Do you want to play?");
+		System.out.println("1. No 2. Yes");
+		answer1 = input.nextInt();
+	
+		if (answer1 == 1) {
+			System.out.println("Come back later!");
+		}
+		else if (answer1 == 2) {
+			System.out.println("Now choose the level of the game you want to play");
+			System.out.println("1. Easy 2. Medium 3. Hard");
+			theLevel = input.nextInt();
+			
+			switch (theLevel) {
+			case 1:
+				easyMode();
+				break;
+		
+			case 2:
+				mediumMode();
+				break;
+				
+			case 3:
+				hardMode();
+				break;
+			}
+		}
 	
 	}
 	/**
@@ -113,6 +143,18 @@ public class guessTheNumber {
 			if (howManyGuesses == 0) {
 				System.out.println("You do not have any guesses left, you lost!");
 			}
+			
+		}
+		System.out.println();
+		System.out.println("Do you want to play again?");
+		System.out.println("1.No 2. Yes");
+		answer1 = input.nextInt();
+		
+		switch (answer1) {
+		case 1:
+			break;
+		case 2:
+			beginGuessGame();
 			
 		}
 	}
