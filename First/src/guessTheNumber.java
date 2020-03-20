@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class guessTheNumber {
@@ -5,7 +6,7 @@ public class guessTheNumber {
 	
 	public static int answer1;
 	public static int theLevel; 
-	public static int minimumNumer; 
+	public static int minimumNumber; 
 	public static int maximumNumber;
 	public static int howManyGuesses;
 	public static int theAnswer;
@@ -17,8 +18,16 @@ public class guessTheNumber {
 		// TODO Auto-generated method stub
 
 	}
-	public static int theRightAnswer() {
-		return 0;
+	/**
+	 * This method creates the answer by generating a random number in the chosen interval
+	 * @param maximumNumber the maximum number in the interval
+	 * @param minimumNumber the minimum number in the interval
+	 * @return returns the right answer that the player will guess
+	 */
+	public static int theRightAnswer(int maximumNumber, int minimumNumber) {
+		Random theAnswer = new Random();
+		
+		return theAnswer.nextInt(maximumNumber - minimumNumber + 1) + minimumNumber;
 		
 	}
 	public static void beginGuessGame() {
