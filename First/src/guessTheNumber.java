@@ -16,7 +16,7 @@ public class guessTheNumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		easyMode();
 
 	}
 	/**
@@ -57,8 +57,35 @@ public class guessTheNumber {
 	public static void hardMode() {
 		
 	}
+	/**
+	 * This method contains the common code between all the levels. 
+	 */
 	public static void allModes() {
 		
+		theAnswer = theRightAnswer(maximumNumber, minimumNumber);
+		System.out.println("Please write your first guess!");
+		
+		for(int i = howManyGuesses; i != 0; i--) {
+			theGuessedNumber = input.nextInt();
+			howManyGuesses--;	
+			
+			if (theGuessedNumber == theAnswer) {
+				System.out.println("You won!");
+				break;
+			}
+			else if (theGuessedNumber < theAnswer) {
+				System.out.println("You guessed wrong! try a higher number!");
+				System.out.println("You have" + howManyGuesses + "left." );
+			}
+			else if (theGuessedNumber > theAnswer) {
+				System.out.println("You guessed wrong! try a lower number!");
+				System.out.println("You have" + howManyGuesses + "left.");
+			}
+			if (howManyGuesses == 0) {
+				System.out.println("You do not have any guesses left, you lost!");
+			}
+			
+		}
 	}
 
 }
