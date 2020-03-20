@@ -34,7 +34,6 @@ public class guessTheNumber {
 		// (max - min + 1) + min so that the generated answer would be >=maximumNumber
 	}
 	public static void beginGuessGame() {
-		System.out.flush();
 		System.out.println("Welcome to Guess the number!");
 		System.out.println("You get to guess the number while you have a limited amount of guesses!");
 		System.out.println("Do you want to play?");
