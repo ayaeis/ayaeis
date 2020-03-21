@@ -2,7 +2,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class guessTheNumber {
-	private static final boolean run = false;
 
 	static Scanner input = new Scanner(System.in);
 	
@@ -33,9 +32,13 @@ public class guessTheNumber {
 		return theAnswer.nextInt(maximumNumber - minimumNumber + 1) + minimumNumber;
 		// (max - min + 1) + min so that the generated answer would be >=maximumNumber
 	}
+	/**
+	 * This method contains the code thats needed to begin the game.
+	 */
 	public static void beginGuessGame() {
 		System.out.println("Welcome to Guess the number!");
 		System.out.println("You get to guess the number while you have a limited amount of guesses!");
+		System.out.println();
 		System.out.println("Do you want to play?");
 		System.out.println("1. No 2. Yes");
 		answer1 = input.nextInt();
@@ -71,11 +74,12 @@ public class guessTheNumber {
 		System.out.flush();
 		System.out.println("You have chosen the easy level of the game!");
 		System.out.println("You get to choose the interval of the number and you have 1000 guesses!");
+		System.out.println();
 		System.out.println("Please write the minimum number of your desired interval");
 		minimumNumber = input.nextInt();
 		System.out.println("Now please write the maximum number of your desired interval");
 		maximumNumber = input.nextInt();
-		System.out.println("Your interval is between " + minimumNumber + " and" + maximumNumber +" and you have 1000 guesses!" );
+		System.out.println("Your interval is between " + minimumNumber + " and " + maximumNumber +" and you have 1000 guesses!" );
 		howManyGuesses = 1000;
 		
 		allModes();
@@ -145,12 +149,13 @@ public class guessTheNumber {
 			
 		}
 		System.out.println();
-		System.out.println("Do you want to play again?");
+		System.out.println("Do you want to go back to main menu?");
 		System.out.println("1.No 2. Yes");
 		answer1 = input.nextInt();
 		
 		switch (answer1) {
 		case 1:
+			System.out.println("Come back later!");
 			break;
 		case 2:
 			beginGuessGame();
