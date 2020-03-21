@@ -5,7 +5,7 @@ public class gissaTalet {
 
 
 	static Scanner input = new Scanner(System.in);
-	public static Int answer1; // för att se till om man vill fortsätta med spelet.
+	public static int answer1; // för att se till om man vill fortsätta med spelet.
 	public static Int theLevel; // väljer nivån man vill ha.
 	public static Int minimumNumber; // minsta talet inom intervallet.
 	public static Int maximumNumber; // största talet inom intervallet.
