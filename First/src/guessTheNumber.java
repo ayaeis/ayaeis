@@ -33,6 +33,22 @@ public class guessTheNumber {
 		// (max - min + 1) + min so that the generated answer would be >=maximumNumber
 	}
 	/**
+	 * This method has a code that fixes getting an error.
+	 * @return returns the input from the player. 
+	 */
+	public static int isNextIntValid() {
+		while(true) {
+			try {
+				return input.nextInt();
+			}
+			catch (Exception e) {
+				System.out.println("Try writing a number instead");
+				input.nextLine();
+				continue;
+			}
+		}
+	}
+	/**
 	 * This method contains the code thats needed to begin the game.
 	 */
 	public static void beginGuessGame() {
@@ -41,7 +57,7 @@ public class guessTheNumber {
 		System.out.println();
 		System.out.println("Do you want to play?");
 		System.out.println("1. No 2. Yes");
-		answer1 = input.nextInt();
+		answer1 = isNextIntValid();
 	
 		if (answer1 == 1) {
 			System.out.println("Come back later!");
@@ -49,7 +65,7 @@ public class guessTheNumber {
 		else if (answer1 == 2) {
 			System.out.println("Now choose the level of the game you want to play");
 			System.out.println("1. Easy 2. Medium 3. Hard");
-			theLevel = input.nextInt();
+			theLevel = isNextIntValid();
 			
 			switch (theLevel) {
 			case 1:
@@ -65,7 +81,6 @@ public class guessTheNumber {
 				break;
 			}
 		}
-	
 	}
 	/**
 	 * This method contains the code for the easy level of this game.
@@ -76,9 +91,9 @@ public class guessTheNumber {
 		System.out.println("You get to choose the interval of the number and you have 1000 guesses!");
 		System.out.println();
 		System.out.println("Please write the minimum number of your desired interval");
-		minimumNumber = input.nextInt();
+		minimumNumber = isNextIntValid();
 		System.out.println("Now please write the maximum number of your desired interval");
-		maximumNumber = input.nextInt();
+		maximumNumber = isNextIntValid();
 		System.out.println("Your interval is between " + minimumNumber + " and " + maximumNumber +" and you have 1000 guesses!" );
 		howManyGuesses = 1000;
 		
@@ -94,11 +109,11 @@ public class guessTheNumber {
 		System.out.println("You get to choose the interval of the number and how many guesses you want!");
 		System.out.println();
 		System.out.println("Please write the minimum number of your desired interval");
-		minimumNumber = input.nextInt();
+		minimumNumber = isNextIntValid();
 		System.out.println("Now please write the maximum number of your desired interval");
-		maximumNumber = input.nextInt();
+		maximumNumber = isNextIntValid();
 		System.out.println("Now choose how many guesses you would like to have!");
-		howManyGuesses = input.nextInt();
+		howManyGuesses = isNextIntValid();
 		System.out.println("Your interval is between " + minimumNumber + " and " + maximumNumber + " and you have " + howManyGuesses + " guesses!");
 		
 		allModes();
@@ -128,7 +143,7 @@ public class guessTheNumber {
 		System.out.println("Please write your first guess!");
 		
 		for(int i = howManyGuesses; i != 0; i--) {
-			theGuessedNumber = input.nextInt();
+			theGuessedNumber = isNextIntValid();
 			howManyGuesses--;	
 			
 			if (theGuessedNumber == theAnswer) {
@@ -151,7 +166,7 @@ public class guessTheNumber {
 		System.out.println();
 		System.out.println("Do you want to go back to main menu?");
 		System.out.println("1.No 2. Yes");
-		answer1 = input.nextInt();
+		answer1 = isNextIntValid();
 		
 		switch (answer1) {
 		case 1:
