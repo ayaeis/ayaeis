@@ -1,0 +1,33 @@
+public class hangManGame {
+	public static char[] randomWordToGuess;
+	public static int amountOfGuesses;
+	public static char[] playerGuess;
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+				
+			}
+	public static void choosesWordToBeGuessed() {
+		
+	}
+	public static void createPlayerGuess() {
+		
+	}
+	public static void startGame() {
+		
+	}
+	public static void easyGameSetup() {
+		
+	}
+	public static void advancedGameSetup() {
+		
+	}
+	public static void guessTheword() {
+		
+	}
+	public static boolean isWordGuessed() {
+		
+	}
+		}
+
