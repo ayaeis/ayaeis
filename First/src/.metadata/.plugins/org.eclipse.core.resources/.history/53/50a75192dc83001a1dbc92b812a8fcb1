@@ -1,0 +1,39 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class hangManGame {
+	public static char[] randomWordToGuess;
+	public static int amountOfGuesses;
+	public static char[] playerGuess;
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner (System.in);
+		Random random = new Random();
+				
+			}
+	public static void choosesWordToBeGuessed() {
+		String[] guesses = {"programming", "bed", "book", "pencil", "school", "fruit", "juice", "fake", "mirror", "tree", "phone"};
+	
+	}
+	public static void createPlayerGuess() {
+		
+	}
+	public static void startGame() {
+		
+	}
+	public static void easyGameSetup() {
+		
+	}
+	public static void advancedGameSetup() {
+		
+	}
+	public static void guessTheword() {
+		
+	}
+	public static boolean isWordGuessed() {
+		
+	}
+		}
+
