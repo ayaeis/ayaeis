@@ -156,9 +156,13 @@ public class hangManGame {
 		}
 		if (correctInput != true) {
 			System.out.println("wrong guess!");
+			if(wrongGuesses.contains(guessInput)) { // So that the wrong guesses list will not have the same letter twice.
+			}
+			else {
 			wrongGuesses.add(guessInput);
+			}
 			howManyWrongGuesses--;
-		}
+		}		
 		printOutHangMan();
 	}
 	/**
