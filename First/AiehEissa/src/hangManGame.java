@@ -143,6 +143,7 @@ public class hangManGame {
 	/**
 	 * A method that checks if the player's input is correct by checking if the char-list contains the input.
 	 * It adds the input to either the list where the player's correct guesses are stored, or the list with wrong guesses.  
+	 * It also calls a method that is going to print out the hang man. 
 	 */
 	public static void doesRightAnswerContainInput() {
 		boolean correctInput= false; 
@@ -195,15 +196,73 @@ public class hangManGame {
 		}
 	  }
 	}
+	/**
+	 * A method that prints out the hang man depending how many times the player has guessed wrong. 
+	 */
 	public static void printOutHangMan() {
 		if (howManyWrongGuesses == 6) {
 			System.out.println("  +---+\n" +
-	                "  |   |\n" +
+	                "   |  |\n" +
 	                "      |\n" +
 	                "      |\n" +
 	                "      |\n" +
 	                "      |\n" +
 	                "=========");
+		}
+		else if(howManyWrongGuesses == 5) {
+			System.out.println("  +---+\n" +
+	                "   |   |\n" +
+	                "   O   |\n" +
+	                "       |\n" +
+	                "       |\n" +
+	                "       |\n" +
+	                "==========");
+		}
+		else if(howManyWrongGuesses == 4) {
+			 System.out.println("  +---+\n" +
+		            "   |   |\n" +
+		            "   O   |\n" +
+		            "   |   |\n" +
+		            "       |\n" +
+		            "       |\n" +
+		            "==========");
+		}
+		else if(howManyWrongGuesses == 3) {
+			System.out.println("  +---+\n" +
+	                "   |   |\n" +
+	                "   O   |\n" +
+	                "  /|   |\n" +
+	                "       |\n" +
+	                "       |\n" +
+	                "==========");
+		}
+		else if(howManyWrongGuesses == 2) {
+			System.out.println("The hangman is on..");
+			System.out.println("  +---+\n" +
+	                "   |   |\n" +
+	                "   O   |\n" +
+	                "  /|\\ |\n" +
+	                "       |\n" +
+	                "       |\n" +
+	                "===========");
+		}
+		else if(howManyWrongGuesses == 1) {
+			System.out.println("  +---+\n" +
+	                "   |   |\n" +
+	                "   O   |\n" +
+	                "  /|\\ |\n" +
+	                "  /    |\n" +
+	                "       |\n" +
+	                "==========");
+		}
+		else if(howManyWrongGuesses == 0) {
+			System.out.println("  +---+\n" +
+	                "   |   |\n" +
+	                "   O   |\n" +
+	                "  /|\\ |\n" +
+	                "  / \\ |\n" +
+	                "       |\n" +
+	                "==========");
 		}
 	}
 }
