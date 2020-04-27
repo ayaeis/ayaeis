@@ -103,6 +103,7 @@ public class hangManGame {
 		System.out.println("You will have 3 free wrong guesses before the hangMan starts hanging!");
 		System.out.println("Good luck!");
 		howManyWrongGuesses = 10;
+		amountOfGuesses = randomWordToGuess.length + howManyWrongGuesses;
 		guessTheWord();
 	}
 	/**
@@ -110,9 +111,10 @@ public class hangManGame {
 	 */
 	public static void advancedGameSetup() {
 		System.out.println("You have chosen the advanced game");
-		System.out.println("Once the hangman dies, you lose!");
+		System.out.println("Once the hangMan dies, you lose!");
 		System.out.println("Good luck!");
 		howManyWrongGuesses = 7;
+		amountOfGuesses = randomWordToGuess.length + howManyWrongGuesses;
 		guessTheWord();
 	}
 	/**
@@ -122,18 +124,20 @@ public class hangManGame {
 	public static void guessTheWord() { 	
 		System.out.println("The word you should guess is:");
 		createPlayerGuess();
-		System.out.println("the word is " + randomWordToGuess.length + " letters long");
+		System.out.println("the word is " + randomWordToGuess.length + " letters long and you only have " + amountOfGuesses + " guesses");
 		
 		boolean wordIsGuessed = false;
-		while (!wordIsGuessed && howManyWrongGuesses!=0) { 
+		while (!wordIsGuessed && amountOfGuesses!=0 && howManyWrongGuesses!=0) { 
 			System.out.println("write your next guess");
 				 guessInput = input.next().charAt(0); // Takes the first letter only in case a word was written.
 				doesRightAnswerContainInput();
+				amountOfGuesses--;
 				wordIsGuessed = isWordGuessed();
 				System.out.println("The word" + Arrays.toString(playerGuess)); // Made the char-list to a string so that it can be printed without a for-loop. 
-				System.out.println("Your wrong guesses: " + wrongGuesses); 
+				System.out.println("Your wrong guesses: " + wrongGuesses); // not working
+				System.out.println("How many guesses left: " + amountOfGuesses);
 		}
-		if(wordIsGuessed= false || howManyWrongGuesses == 0) {
+		if(wordIsGuessed= false || amountOfGuesses == 0) {
 			System.out.println("You lost :(");
 			System.out.println("The right anwer was:");
 			System.out.println(randomWordToGuess);
