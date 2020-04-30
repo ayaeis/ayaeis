@@ -136,7 +136,7 @@ public class hangManGame {
 				}
 				else {
 				System.out.println("Your wrong guesses: " + wrongGuesses); 
-				}
+				} 
 		}
 		if(wordIsGuessed= false || howManyWrongGuesses == 0) {
 			System.out.println("You lost :(");
@@ -275,4 +275,5 @@ public class hangManGame {
 		}
 	}
 }
+
 
