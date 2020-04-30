@@ -130,8 +130,13 @@ public class hangManGame {
 				 guessInput = input.next().charAt(0); // Takes the first letter only in case a word was written.
 				doesRightAnswerContainInput();
 				wordIsGuessed = isWordGuessed();
-				System.out.println("The word" + Arrays.toString(playerGuess)); // Made the char-list to a string so that it can be printed without a for-loop. 
+				System.out.println("The word" + Arrays.toString(playerGuess)); // Made the char-list to a string so that it can be printed without a for-loop.
+				if (wrongGuesses.size() == 0) { // so the list will not be printed if there hasnt been any wrong guesses.
+					System.out.println("You have no wrong guesses yet.");
+				}
+				else {
 				System.out.println("Your wrong guesses: " + wrongGuesses); 
+				}
 		}
 		if(wordIsGuessed= false || howManyWrongGuesses == 0) {
 			System.out.println("You lost :(");
