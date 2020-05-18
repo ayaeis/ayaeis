@@ -221,6 +221,7 @@ public class hangManGame {
 	 */
 	public static void printOutHangMan() {
 		if (howManyWrongGuesses == 6) {
+			System.out.println("The hangman has started hanging!");
 			System.out.println("  +---+\n" +
 	                "   |  |\n" +
 	                "      |\n" +
