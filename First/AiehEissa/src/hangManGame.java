@@ -17,7 +17,6 @@ public class hangManGame {
 		// TODO Auto-generated method stub
 		choosesWordToBeGuessed();
 		startGame();
-		backToMainMenu();
 			}
 	/**
 	 * A method that chooses a random word out of a list of words, by using the Random-function to choose the index (place) of the word in the list
@@ -31,7 +30,7 @@ public class hangManGame {
 	 * A method that creates a new char-array, which will store the player's correct guesses. This list will be as long as the chosen word.
 	 * and it fills the list with '_', resembling "unknown" letters. 
 	 */
-	public static void createPlayerGuess() {
+	public static void createPlayerGuess() { 
 		playerGuess = new char[randomWordToGuess.length];
 		for (int i= 0; i< playerGuess.length; i++) {
 			playerGuess[i] = '_';
@@ -86,7 +85,7 @@ public class hangManGame {
 				advancedGameSetup();
 				break;	
 			default:
-				System.out.println("You did not follow the instructions! come back later.");
+				System.out.println("You did not follow the instructions, you were supposed to answer with 1 or 2! come back later.");
 			}
 			break;
 		}
@@ -143,6 +142,7 @@ public class hangManGame {
 			System.out.println("The right anwer was:");
 			System.out.println(randomWordToGuess);
 		}
+		backToMainMenu();
 		
 	}
 	/**
@@ -152,21 +152,30 @@ public class hangManGame {
 	 */
 	public static void doesRightAnswerContainInput() {
 		boolean correctInput= false; 
+		boolean isDigit = Character.isLetter(guessInput); // checks if char is a letter
+		if(!isDigit) { // if char is not a letter, it makes correctInput to true, so both if's down there are not going to be played. 
+			System.out.println("Please write a letter instead.");
+			correctInput= true; 
+		}
+		
+		if(correctInput != true) {
 		for(int i=0; i< randomWordToGuess.length; i++) {
 			if(randomWordToGuess[i] == guessInput) {
 				System.out.println("correct guess!");
 				playerGuess[i] = guessInput;
-				correctInput = true;
+				correctInput = true; 
 		  }
 		}
+		}
 		if (correctInput != true) {
-			System.out.println("wrong guess!");
 			if(wrongGuesses.contains(guessInput)) { // So that the wrong guesses list will not have the same letter twice.
+				System.out.println("You have already guessed this letter. This won't be counted.");
 			}
 			else {
-			wrongGuesses.add(guessInput);
+				System.out.println("wrong guess!");
+			    wrongGuesses.add(guessInput);
+			    howManyWrongGuesses--;  // howManyWrongGuesses will only decrease in case the input is a letter that has not been guessed before. 
 			}
-			howManyWrongGuesses--;
 		}		
 		printOutHangMan();
 	}
@@ -193,6 +202,8 @@ public class hangManGame {
 		while (true) {
 		int playAgain = isNextIntValid();
 		if (playAgain == 1) {
+			wrongGuesses.clear();
+			howManyWrongGuesses = 0;
 			startGame();
 			break;
 		}
@@ -275,5 +286,4 @@ public class hangManGame {
 		}
 	}
 }
-
 
