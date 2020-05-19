@@ -151,14 +151,14 @@ public class hangManGame {
 	 * It also calls a method that is going to print out the hang man. 
 	 */
 	public static void doesRightAnswerContainInput() {
-		boolean correctInput= false; 
-		boolean isDigit = Character.isLetter(guessInput); // checks if char is a letter
-		if(!isDigit) { // if char is not a letter, it makes correctInput to true, so both if's down there are not going to be played. 
-			System.out.println("Please write a letter instead.");
-			correctInput= true; 
-		}
+		boolean invalidInput= false; 
+		boolean letterWasAlreadyGuessed = false;
+		boolean correctInput = false;
 		
-		if(correctInput != true) {
+		invalidInput = isInputInvalid();
+		letterWasAlreadyGuessed = hasLetterAlreadyBeenGuessed();
+		
+		if(invalidInput != true && letterWasAlreadyGuessed!=true) { // if the input is not invalid (is a letter, and not a symbol or number) and has not already been guessed-
 		for(int i=0; i< randomWordToGuess.length; i++) {
 			if(randomWordToGuess[i] == guessInput) {
 				System.out.println("correct guess!");
@@ -167,17 +167,49 @@ public class hangManGame {
 		  }
 		}
 		}
-		if (correctInput != true) {
-			if(wrongGuesses.contains(guessInput)) { // So that the wrong guesses list will not have the same letter twice.
-				System.out.println("You have already guessed this letter. This won't be counted.");
-			}
-			else {
-				System.out.println("wrong guess!");
-			    wrongGuesses.add(guessInput);
-			    howManyWrongGuesses--;  // howManyWrongGuesses will only decrease in case the input is a letter that has not been guessed before. 
-			}
+		if (correctInput != true && invalidInput!= true && letterWasAlreadyGuessed!=true) { //if the input is not invalid, and has not already been guessed, and is not a correct letter-
+			System.out.println("wrong guess!");
+			wrongGuesses.add(guessInput);
+			howManyWrongGuesses--;  
 		}		
 		printOutHangMan();
+	}
+	/**
+	 * A method that checks if the input is a letter or not
+	 * @return true or false depending on whether the input is a letter or digit/symbol.
+	 */
+	public static boolean isInputInvalid() {
+		boolean isLetter = Character.isLetter(guessInput); // checks if char is a letter
+		if(!isLetter) {  //in case char is not a letter
+			System.out.println("-----------------------");
+			System.out.println("Please write a letter instead. This will not be counted");
+			System.out.println("-----------------------");
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	/**
+	 * A method that checks if the letter has already been guessed before
+	 * @return returns true of false depending on the answer
+	 */
+	public static boolean hasLetterAlreadyBeenGuessed() {
+		if(Arrays.toString(playerGuess).contains(Character.toString(guessInput))) { // makes the array a String, so no external loop will be needed to check wether it contains char or not. 
+			System.out.println("-------------------------");
+			System.out.println("You already guessed this correctly before"); //^ makes char to a String, so it can be compared with a String-method. 
+			System.out.println("-------------------------");
+			return true;
+		}
+		else if (wrongGuesses.contains(guessInput)) {
+			System.out.println("-------------------------");
+			System.out.println("You have already guessed this wrong letter, it will not be counted");
+			System.out.println("-------------------------");
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	/**
 	 * A method that checks if the word has been guessed by checking if there is any '_' left in the list where the player's correct guesses get stored.
@@ -221,7 +253,7 @@ public class hangManGame {
 	 */
 	public static void printOutHangMan() {
 		if (howManyWrongGuesses == 6) {
-			System.out.println("The hangman has started hanging!");
+			System.out.println("The hangman is hanging!");
 			System.out.println("  +---+\n" +
 	                "   |  |\n" +
 	                "      |\n" +

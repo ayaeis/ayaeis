@@ -7,6 +7,7 @@ public class Test {
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 
+		String 
 		char newchar = input.next().charAt(0);
 		boolean isDigit = Character.isDigit(newchar);
 		if(isDigit) {
