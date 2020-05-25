@@ -195,7 +195,10 @@ public class hangManGame {
 	 * @return returns true of false depending on the answer
 	 */
 	public static boolean hasLetterAlreadyBeenGuessed() {
-		if(Arrays.toString(playerGuess).contains(Character.toString(guessInput))) { // makes the array a String, so no external loop will be needed to check wether it contains char or not. 
+		if(guessInput == ',' || guessInput == '_' || guessInput == '[') { // since the list contains , and _ and [ from the beginning, these would be counted as "correct letters". so this way they will
+			return false;
+		}
+		else if(Arrays.toString(playerGuess).contains(Character.toString(guessInput))) { // makes the array a String, so no external loop will be needed to check wether it contains char or not. 
 			System.out.println("-------------------------");
 			System.out.println("You already guessed this correctly before"); //^ makes char to a String, so it can be compared with a String-method. 
 			System.out.println("-------------------------");
